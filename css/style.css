@@ -1,0 +1,202 @@
+ *{
+            margin:0;
+            padding: 0;
+            font-size: 0;
+
+        }
+        div#container{
+            position: relative;
+            width: 100%;/*缩小比例，就可以看大隐藏的li*/
+           /* height: 100%;*/
+            background-color: grey;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        ul#contentWrap{
+            position: relative;
+            left: 0;
+            list-style: none;
+            /*background-color: red;*/
+            height: 100%;
+        }
+        ul#contentWrap>li{
+            float: left;
+            height: 100%;
+           /* background-color: yellow;*/
+            position: relative;/*用right，就只能是相对于li了。ul是三倍宽*/
+        }
+        #button{
+            position: absolute;
+            bottom: 0;
+        }
+        #stopbtn{
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+        }
+         div#boy{
+        width: 151px;
+        height: 291px;
+        background-image:url("../images/boy.png");
+        background-repeat: no-repeat;
+        background-position: -0px -291px;
+        position: absolute;
+        left:6%;
+        top: 55%;
+    }
+    .footChange{
+         animation-name: footChange;
+        -webkit-animation-name: footChange;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        animation-timing-function: steps(1, start);
+        -moz-animation-timing-function: steps(1, start);
+        -webkit-animation-timing-function: steps(1, start);
+    }
+    @keyframes footChange{
+        0%{background-position: -0px -291px;}
+
+        25%{background-position: -602px -0px;}
+
+        50%{background-position: -302px -291px;}
+
+        75%{background-position: -151px -291px;}
+
+        100%{background-position: -0px -291px;}
+
+    }
+    .pauseWalk{
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
+        -moz-animation-play-state: paused;
+    }
+    /*取花*/
+    .takeflowers{
+        animation:flower 950ms step-start infinite;
+        -webkit-animation:flower 950ms step-start infinite;
+        -moz-animation:flower 950ms step-start infinite; 
+    }
+    @keyframes flower{
+        0%{
+            background-position: -0px -291px;
+        }
+        25%{
+            background-position: -904px -0px;
+        }
+        50%{
+            background-position: -451px -0px;
+        }
+        75%{
+            background-position: -753px -0px;
+        }
+        100%{
+            background-position: -300px -0px;
+        }
+    }
+
+    /*太阳 */ 
+    #sun{
+        width: 150px;
+        height: 150px;
+        background: url('../images/sun.png');
+        background-size: 100% 100%;
+        position: absolute;
+        z-index: 0;
+        top: -30px;
+        right: 40%;
+
+    }
+    .sunRotation{
+        animation:sunRotation 30s;
+        -webkit-animation:sunRotation 30s;
+        -moz-animation:sunRotation 30s;
+    }
+    @keyframes sunRotation{
+        0%{
+            transform: translate(0,0,0);
+        }
+        100%{
+            transform: translate(-2000px,200px);
+        }
+    }
+     /*云*/
+    .cloud{
+        z-index:2;
+        position: absolute;
+    }
+    .cloud1{
+        width: 121px;
+        height: 70px;
+        left: -5%;
+        top: 15%;
+        background: url(../images/cloud1.png);
+        background-size: 100% 100%;
+    }
+    .cloud2{
+        width: 200px;
+        height: 80px;
+        right: -5%;
+        top: 0;
+        background: url(../images/cloud2.png);
+        background-size: 100% 100%;
+    }
+    .cloud1Anim{
+        animation: smallCloud 30s linear infinite;
+        -webkit-animation: smallCloud 30s linear infinite;
+        -moz-animation: smallCloud 30s linear infinite;
+    }
+    @keyframes smallCloud{
+        0%{
+            left: -5%;
+        }
+        100%{
+            left: 100%;
+        }
+    }
+    .cloud2Anim{
+        animation: largeCloud 30s linear infinite;
+        -webkit-animation: largeCloud 30s linear infinite;
+        -moz-animation: largeCloud 30s linear infinite;
+    }
+    @keyframes largeCloud{
+        0%{
+            right: -5%;
+        }
+        100%{
+            right: 100%;
+        }
+    }
+
+    /*男孩转身*/
+    .boyRotate{
+        animation: boyrotate 850ms 1 step-start forwards;
+        -webkit-animation: boyrotate 850ms 1 step-start forwards;
+        -moz-animation: boyrotate 850ms 1 step-start forwards;
+    }
+    @keyframes boyrotate{
+        0% {
+           background-position: -603px -291px;
+       }
+       16.7% {
+           background-position: -150px -0px;
+       }
+       33.4% {
+           background-position: -453px -291px;
+       }
+       50.1% {
+           background-position: -0px -0px;
+       }
+       66.8% {
+           background-position: -903px -291px;
+       }
+       83.5% {
+           background-position: -753px -291px;
+       }
+       100% {
+           background-position: -603px -291px;
+       }
+    }

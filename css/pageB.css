@@ -1,0 +1,69 @@
+/*如果这里设置了层级关系，由于优先级的关系，新增的背景不会覆盖原背景，切记！！！~~~*/
+.bBackground{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/B-dark.png);
+    background-size: 100% 100%;
+    position: absolute;
+}
+.bBackgroundPreload{
+    background-image: url(../images/B-bright.png) no-repeat -9999px -9999px;/*先让图片加载出来，但是没有宽和高设置了背景图也显示不了，所以需要设置位置吗？*/
+}
+/* 这里是为了？？*/
+.lampBright{
+    background-image: url(../images/B-bright.png);
+}
+/*商店*/
+
+.shop{
+    width: 39.5%;
+    height: 35.5%;
+    position: absolute;
+    left: 29%;
+    top: 36.5%;
+}
+.door{
+    position: absolute;
+    width: 32%;
+    top: 32%;
+    height: 68%;
+    overflow: hidden;
+    left: 58.5%;
+}
+.doorLeft,.doorRight {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+.doorLeft {
+    left: 0%;
+    background: url(../images/door-left.png);
+    background-size: 100% 100%;
+}
+
+.doorRight {
+    left: 50%;
+    background: url(../images/door-right.png);
+    background-size: 100% 100%;
+}
+.bird{
+    min-width: 91px;
+    min-height: 71px;
+    top: 4%;
+    position: absolute;
+    z-index: 2;
+    right: -91px;
+    background: url('../images/bird.png') -182px 0px no-repeat;
+}
+.birdFly{
+    animation: birdfly 400ms step-start infinite;
+    -webkit-animation: birdfly 400ms step-start infinite;
+    -moz-animation: birdfly 400ms step-start infinite;
+}
+@keyframes birdfly{
+    0%{background-position: -182px 0px;}
+    50% {background-position: 0px 0px;}
+    75% {background-position: -91px 0px;}
+    100% {background-position: -182px 0px;}
+}

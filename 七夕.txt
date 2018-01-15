@@ -1,0 +1,32 @@
+1.最外层的div1设一个固定的宽度。动态读取宽度。
+ul的宽度设置成div1宽度的3倍。并且溢出部分隐藏。
+每个li的宽度等于div1的宽度，超出隐藏。
+
+css3动画：
+1.animation: mydiv 2s linear infinite alternate;
+  设置alternate，动画会有速度的返回。
+
+2.设置速度为匀速，这样动画之间才会连续。默认是ease，导致第一段路和第二段路会停顿一个步伐，非常不自然。
+3.非常重要！！！
+-webkit-animation动画有三个事件：
+开始事件: webkitAnimationStart
+结束事件:  webkitAnimationEnd
+重复运动事件: webkitAnimationIteration
+
+所以：
+var animationEnd=function(){
+  var explorer=navigator.userAgent;
+  if(~explorer.indexOf('WebKit')){
+    return 'webkitAnimationEnd';//因为有return，所以这里return，函数调用就结束了。
+  } 
+  return 'animationend';
+}();//这个函数就是为了判断浏览器信息，为了兼容。
+
+$("#mydiv").on(animationEnd,function(){
+	console.log('动画结束');//监听到该动画完成以后，才会调用回调函数。animationEnd是个变量，值是一个自执行匿名函数的返回值(返回值是一个事件名称)。
+})
+首先，这里的webkitAnimationEnd和animationend就是一个像click一样的事件！
+而且，匿名自执行函数根据浏览器的不同，已经把事件返给了变量animationEnd。animationEnd这个变量已经被替换为了'webkitAnimationEnd'事件名称(判断的结果)。
+最后，一旦div的动画结束，'webkitAnimationEnd'事件就会被触发，也就会执行回调函数了。
+
+4.
