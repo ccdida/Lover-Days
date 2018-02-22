@@ -1,2 +1,3 @@
 动画效果预览：https://ccdida.github.io/LoverDays/index.html
-如果遇到闪屏，是因为预加载失败---待解决
+
+待解决问题-预加载失败导致的闪屏
