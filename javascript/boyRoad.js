@@ -1,3 +1,12 @@
+var imgSrcArr = ['../images/B-bright.png'];
+var imgWrap = [];
+    function preloadImg(arr) {
+        for(var i =0; i< arr.length ;i++) {
+            imgWrap[i] = new Image();
+            imgWrap[i].src = arr[i];
+        }
+    }
+preloadImg(imgSrcArr);
 // 页面滚动的接口，封装，只给外部可以调用的接口
 function Swipe(){ 
     $container=$("#container");//获得li-ul-div中的div
